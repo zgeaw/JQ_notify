@@ -1,0 +1,45 @@
+body{ margin: 0 auto;}
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; outline: none; }
+.arc_dialog{ position: fixed; top: 0; left: 0; width: 100%; height: 100%; text-align: center; z-index: 10000; 
+font-family: "microsoft yahei",arial; display: -webkit-flex; -webkit-justify-content: center; -webkit-align-items: center; padding: 0 1rem;}
+.arc_dialog .arc_dialogbg{ background: #000; opacity: 0.6;  filter:alpha(opacity=60); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;}
+.arc_dialog .arc_dialog_win{display: inline-block; position: relative; z-index: 2; background-color: #000; background:rgba(0,0,0,.8); box-shadow: 0 0 3px rgba(255,255,255,.3); border-radius: 8px; margin: 0 auto; color: #fff; text-align: center;  transition: all .6s cubic-bezier(0.63, 0.13, 0.12, 1.51);}			
+.arc_dialog .arc_dialog_header{width:50px; height: 50px; display: inline-block;margin: 25px auto; background: url(check.png) no-repeat;}
+.arc_dialog .arc_dialog_header.waiting{background: #000; border-color: #fff;  border-top:5px solid rgba(255, 255, 255, 0.2);
+border-right: 5px solid rgba(255, 255, 255, 0.2); border-bottom: 5px solid rgba(255, 255, 255, 0.2); border-left: 5px solid #ffffff; animation: loading 1.1s infinite linear;}
+.arc_dialog .arc_dialog_header.success{ background-position: 0 -50px;}
+.arc_dialog .arc_dialog_msg{ padding: 0 25px 20px;}
+.arc_dialog .arc_dialog_footer{ padding: 0 10px 10px;}
+.arc_dialog .arc_dialog_footer button{ border: none; margin: 5px; padding: 10px 15px; border-radius: 3px; outline: none; background: #eee; color: #999;}
+.arc_dialog .arc_dialog_footer button.green{ background: green; color: #fff;}
+.arc_dialog .arc_dialog_footer button.red{ background: red; color: #fff;}
+.arc_dialog .arc_dialog_ScaleUp{animation: arc_dialog_open .6s;}
+.arc_dialog button{ cursor: pointer;}
+.demo{ max-width: 600px; margin: 50px auto; padding: 0 1rem;}
+.demo button{ display: block; margin-bottom: 15px; width: 100%; height: 50px; line-height: 1.8; border: none;border-radius: 6px;
+ background: rgba(0,139,0,.8); color: #fff; font-family: "microsoft yahei",arial; transition: all .4s ease; cursor: pointer;}
+ .demo button:hover,.demo button:focus{background: rgba(0,139,0,1); box-shadow: 0 0 5px rgba(0,0,0,.1);}
+@-webkit-keyframes loading {
+	0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes loading {
+	0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } 
+}
+@-webkit-keyframes arc_dialog_open {
+	0% { -webkit-transform: scale(0); transform: scale(0); }
+	100% { -webkit-transform: scale(1); transform: scale(1); }
+}
+@keyframes arc_dialog_open {
+	0% { -webkit-transform: scale(0); transform: scale(0); }
+	100% { -webkit-transform: scale(1); transform: scale(1); }
+}
+@-webkit-keyframes arc_dialog_close {
+	0% { -webkit-transform: scale(1); transform: scale(1); }
+	100% { -webkit-transform: scale(0); transform: scale(0); }
+}
+@keyframes arc_dialog_close {
+	0% { -webkit-transform: scale(1); transform: scale(1); }
+	100% { -webkit-transform: scale(0); transform: scale(0); }
+}

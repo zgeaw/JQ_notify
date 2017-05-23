@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>JQ通知插件封装</title>
+		<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="arc.css" />
+		<script src="jquery.min.js"></script>
+		<script src="JQarc.js"></script>
+		<script>
+			$(function() {
+				$('#btn1').click(function(){
+					$.Dialog();
+				});
+				
+				$('#btn2').click(function(){
+					$.Dialog({
+						type:'warning',
+						message:'我是一个警告框，2秒后关闭',
+						delay:2000
+					});
+				});
+				
+				$('#btn3').click(function(){
+					$.Dialog({
+						type:'warning',
+						message:'我是一个警告框，点击按钮关闭',
+						buttons:[
+							{
+								title:'确认'
+							}
+						]
+					});
+				});
+				
+				$('#btn4').click(function(){
+					$.Dialog({
+						type:'success',
+						message:'操作成功，点击确认不会关闭',
+						buttons:[
+							{
+								title:'确认',
+								type:'green',
+								callback:function(){
+									alert('点击确认不会关闭');
+									return false;
+								}
+							},
+							{
+								title:'取消'
+							}
+						]
+					});
+				});
+				
+				$('#btn5').click(function(){
+					$.Dialog({
+						type:'warning',
+						message:'我是一个警告框，点击按钮关闭',
+						buttons:[
+							{
+								title:'确认',
+								type:'red'
+							}
+						]
+					});
+				});
+				
+				$('#btn6').click(function(){
+					$.Dialog({
+						type:'warning',
+						message:'我是一个多组合的按钮框，且按钮样式可定制',
+						buttons:[
+							{
+								title:'确认',
+								type:'green'
+							},
+							{
+								title:'删除',
+								type:'red'
+							},
+							{
+								title:'取消'
+							}
+						]
+					});
+				});
+				
+				$('#btn7').click(function(){
+					$.Dialog({
+						width:300,
+						type:'warning',
+						message:'我是一个多组合的按钮框，且按钮样式可定制',
+						buttons:[
+							{
+								title:'确认',
+								type:'green',
+								callback:function(){
+									$.Dialog({
+										delay:2000
+									});
+									return false;
+								}
+							},
+							{
+								title:'删除',
+								type:'red'
+							}
+						]
+					});
+				});
+				
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="demo">			
+			<button type="button" id="btn1">没有传递任何参数,弹出loading</button>
+			<button type="button" id="btn2">弹出一个无按钮，且是警告的框，2秒后自动关闭</button>
+			<button type="button" id="btn3">弹出一个按钮，且是警告的框，点击按钮直接关闭</button>
+			<button type="button" id="btn4">弹出一个有确认和取消按钮的成功框，点击按钮不关闭</button>
+			<button type="button" id="btn5">弹出一个确认按钮的警告框，且按钮样式可定制</button>
+			<button type="button" id="btn6">弹出一个多组合的按钮框，且按钮样式可定制</button>
+			<button type="button" id="btn7">弹出一个确认和删除的框，点击确认出加载框2秒自动关闭，点击删除关闭上一次框</button>
+		</div>
+	</body>
+
+</html>
