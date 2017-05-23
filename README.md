@@ -4,7 +4,7 @@
 
 #Demo
 
-#$(function() {
+$(function() {
 
 	$.Dialog();
 	
