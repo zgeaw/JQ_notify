@@ -1,3 +1,4 @@
+//32237384@qq.com
 (function($) {
 	var Dialog = function(opts) {
 		var _this = this;
