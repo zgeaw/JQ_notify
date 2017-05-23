@@ -5,15 +5,17 @@
 #Demo
 
 #$(function() {
-	#	$.Dialog();
-	#	$.Dialog({
+
+	$.Dialog();
 	
-	#					type:'warning',
+	$.Dialog({
 	
-	#					message:'我是一个警告框，2秒后关闭',
+		type:'warning',
+		
+		message:'我是一个警告框，2秒后关闭',
 	
-	#					delay:2000
+		delay:2000
 	
-	#				});
+	});
 	
-#});
+});
